@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# User Registration Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a User Registration Form built using React.js and integrates form validation using the Yup library. The form allows users to register by providing their personal information and performs various validations before submission. The submitted data is then displayed in a table using DataTables.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Input fields for Name, Age, Sex, Mobile, Emergency Contact, ID Type, and Govt Issued ID.
+- Form validation using the Yup library to enforce data integrity and ensure accurate information is submitted.
+- Validations include:
+  - Name, Age, and Sex are required fields.
+  - Mobile and Emergency Contact Number should be valid Indian mobile numbers.
+  - Govt Issued ID validation:
+    - If "ID Type" is Aadhar, Govt Id should be a valid 12-digit numeric string.
+    - If "ID Type" is PAN, Govt Id should be a valid 10-digit alphanumeric string.
+- User feedback through error messages for invalid inputs.
+- Submission of the form data to a server endpoint using Axios for further processing.
+- Display of submitted data in a table using DataTables for enhanced functionality and user experience.
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Node.js installed on your machine.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone https://github.com/shivam23kumar/Onito-assignment.git
+   ```
 
-### `npm run build`
+3. Install the dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server for the frontend:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm start
+   ```
+5. Start the development server for backend:
 
-### `npm run eject`
+    ```bash
+   npm run server
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open your web browser and visit `http://localhost:3000/` to see the User Registration Form in action. The submitted data will be displayed in a table in this route http://localhost:3000/table that uses DataTables.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- React.js - JavaScript library for building user interfaces.
+- Yup - JavaScript schema builder for form validation.
+- Axios - Promise-based HTTP client for making API requests.
+- DataTables - JavaScript library for enhancing HTML tables with advanced functionality.
+- HTML - Markup language for creating the structure of the form and table.
+- CSS - Styling language for enhancing the appearance of the form and table.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Directory Structure
 
-## Learn More
+The project structure is organized as follows:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+user-registration-form/
+  ├── server/
+  │   ├── index.js
+  ├── src/
+  │   ├── components/
+  │   │   ├── UserForm.js
+  │   │   ├── UserList.js
+  │   │   └── ...
+  │   ├── App.js
+  │   ├── index.js
+  │   └── ...
+  ├── public/
+  │   ├── index.html
+  │   └── ...
+  ├── package.json
+  └── ...
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `server/index.js` - Contains the backend code that performs GET and POST operations.
+- `src/components/` - Contains the components for the User Registration Form and User List.
+- `src/components/UserForm.js` - Component that renders the User Registration Form.
+- `src/components/UserList.js` - Component that renders the table and displays the submitted user data using DataTables.
+- `src/App.js` - The main component that renders the User Registration Form and User List components.
+- `src/index.js` - Entry point of the application.
+- `public/` - Contains the static files, including the HTML file that hosts the React app.
 
-### Code Splitting
+## Acknowledgements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The React.js documentation and the Yup library documentation for reference.
+- The DataTables library for enhancing the functionality and appearance of the table.

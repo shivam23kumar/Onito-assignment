@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import $ from "jquery";
 import "datatables.net";
+import ".././App.css";
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -32,9 +33,10 @@ function UserList() {
             <th>Age</th>
             <th>Sex</th>
             <th>Mobile</th>
-            <th>Emergency Contact</th>
-            <th>ID Type</th>
-            <th>Government ID Issued</th>
+            <th>Address</th>
+            <th>Govt. ID</th>
+            <th>Guardian</th>
+            <th>Nationality</th>
           </tr>
         </thead>
         <tbody>
@@ -44,9 +46,10 @@ function UserList() {
               <td>{user.age}</td>
               <td>{user.sex}</td>
               <td>{user.mobile}</td>
-              <td>{user.emergencyContact}</td>
-              <td>{user.govtIdType}</td>
+              <td>{user.address}</td>
               <td>{user.govtId}</td>
+              <td>{user.guardian}</td>
+              <td>{user.nationality}</td>
             </tr>
           ))}
         </tbody>
@@ -54,5 +57,5 @@ function UserList() {
     </div>
   );
 }
-
+// Name, Age/Sex, Mobile, Address, Govt ID, Guardian Details, Nationality
 export default UserList;
