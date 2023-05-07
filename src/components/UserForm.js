@@ -1,3 +1,5 @@
+// This code is a React component that displays a form to let users enter information and submit it to an API endpoint. 
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
@@ -6,6 +8,7 @@ import ".././App.css";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
+// Creating validation schema using yup
 const validationSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
   age: yup.number().required("Age is required"),
@@ -46,6 +49,7 @@ const validationSchema = yup.object().shape({
 });
 
 function UserRegistrationForm() {
+  // Using useForm and yupResolver to validate the form and handle form submission
   const {
     register,
     handleSubmit,
@@ -54,19 +58,21 @@ function UserRegistrationForm() {
     resolver: yupResolver(validationSchema),
   });
 
+  // Handling the form submission and sending the data to the server using axios
   const onSubmit = (data) => {
     axios
       .post("http://localhost:4000/api/users", data)
       .then((res) => {
         console.log(res.data);
-      })
+      }).then(alert("Form Submitted"))
       .catch((err) => {
         console.error(err);
       });
   };
 
-  return (
-    
+  
+
+  return (    
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <h4>Personal details</h4>

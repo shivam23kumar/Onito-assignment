@@ -44,9 +44,7 @@ required:false,},
 salutation: {type:String,
 required:false,},
   emergencyContact: {type:String,
-required:false,},
-  
-  
+required:false,},  
   idType: {type:String,
 required:false,},
   govtId: {type:String,
@@ -90,6 +88,7 @@ app.post("/api/users", async (req, res) => {
   }
 });
 
+// Route for handling GET requests to retrieve the added users
 app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find();
@@ -101,5 +100,5 @@ app.get("/api/users", async (req, res) => {
 
 // Start the server
 app.listen(4000, () => {
-  console.log("Server listening on port 4000");
+  console.log("Server listening on port 5000");
 });

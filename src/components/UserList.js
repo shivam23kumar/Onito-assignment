@@ -1,3 +1,5 @@
+// This code is a React component that displays a table of user information using data fetched from an API endpoint. 
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import $ from "jquery";
@@ -6,16 +8,18 @@ import ".././App.css";
 
 function UserList() {
   const [users, setUsers] = useState([]);
-
+// Declares a state variable for storing the user data, initialized with an empty array.
   useEffect(() => {
     async function fetchUsers() {
       try {
         const response = await axios.get("http://localhost:4000/api/users");
         setUsers(response.data);
+        // Fetches user data from the API endpoint and updates the state variable with the response data.
         console.log("from userlist ===> ", response.data);
         $(document).ready(() => {
           $("#usersTable").DataTable();
         });
+        // Initializes a DataTables plugin on the table element after the component has mounted.
       } catch (err) {
         console.log(err);
       }
@@ -57,5 +61,5 @@ function UserList() {
     </div>
   );
 }
-// Name, Age/Sex, Mobile, Address, Govt ID, Guardian Details, Nationality
 export default UserList;
+// Exports the UserList component for use in other parts of the application.
