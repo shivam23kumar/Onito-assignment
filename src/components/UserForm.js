@@ -32,7 +32,19 @@ const validationSchema = yup.object().shape({
         .required("PAN number is required");
     }
     return schema;
-  }),
+    }),
+    guardian: yup.string().required(),
+    salutation: yup.string().required(),
+    occupation: yup.string().required(),
+    maritalStatus: yup.string().required(),
+    religion: yup.string().required(),
+    bloodGroup: yup.string().required(),
+    nationality: yup.string().required(),
+    address: yup.string().required(),
+    state: yup.string().required(),
+    city: yup.string().required(),
+    country: yup.string().required(),
+    pincode: yup.string().required()
 });
 
 function UserRegistrationForm() {

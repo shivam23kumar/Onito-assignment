@@ -54,6 +54,7 @@ app.post("/api/users", async (req, res) => {
   try {
     const userData = req.body;
     const user = new User(userData);
+    console.log(user,userData);
     await user.save();
     res.status(201).json(user);
   } catch (err) {
